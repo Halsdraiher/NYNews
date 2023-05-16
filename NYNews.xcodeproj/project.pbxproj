@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5B033B6716BA9E0D460B25B6 /* libPods-NYNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E9991279BB6A81AE786BCB /* libPods-NYNews.a */; };
+		622344B12A13BC8F0083759C /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622344B02A13BC8F0083759C /* TabViewController.swift */; };
 		62B6A7832A136C0D00915C92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6A7822A136C0D00915C92 /* AppDelegate.swift */; };
 		62B6A7852A136C0D00915C92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6A7842A136C0D00915C92 /* SceneDelegate.swift */; };
-		62B6A7872A136C0D00915C92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6A7862A136C0D00915C92 /* ViewController.swift */; };
 		62B6A78A2A136C0D00915C92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B6A7882A136C0D00915C92 /* Main.storyboard */; };
 		62B6A78D2A136C0D00915C92 /* NYNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 62B6A78B2A136C0D00915C92 /* NYNews.xcdatamodeld */; };
 		62B6A78F2A136C0E00915C92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62B6A78E2A136C0E00915C92 /* Assets.xcassets */; };
@@ -19,10 +19,10 @@
 
 /* Begin PBXFileReference section */
 		02E9991279BB6A81AE786BCB /* libPods-NYNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NYNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		622344B02A13BC8F0083759C /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		62B6A77F2A136C0D00915C92 /* NYNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B6A7822A136C0D00915C92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62B6A7842A136C0D00915C92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		62B6A7862A136C0D00915C92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		62B6A7892A136C0D00915C92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		62B6A78C2A136C0D00915C92 /* NYNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NYNews.xcdatamodel; sourceTree = "<group>"; };
 		62B6A78E2A136C0E00915C92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,12 +75,12 @@
 			children = (
 				62B6A7822A136C0D00915C92 /* AppDelegate.swift */,
 				62B6A7842A136C0D00915C92 /* SceneDelegate.swift */,
-				62B6A7862A136C0D00915C92 /* ViewController.swift */,
 				62B6A7882A136C0D00915C92 /* Main.storyboard */,
 				62B6A78E2A136C0E00915C92 /* Assets.xcassets */,
 				62B6A7902A136C0E00915C92 /* LaunchScreen.storyboard */,
 				62B6A7932A136C0E00915C92 /* Info.plist */,
 				62B6A78B2A136C0D00915C92 /* NYNews.xcdatamodeld */,
+				622344B02A13BC8F0083759C /* TabViewController.swift */,
 			);
 			path = NYNews;
 			sourceTree = "<group>";
@@ -91,7 +91,6 @@
 				AA92BA7FD0E1583A7290CF43 /* Pods-NYNews.debug.xcconfig */,
 				ED09F800A7EECB739A6E2C52 /* Pods-NYNews.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -192,7 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62B6A7872A136C0D00915C92 /* ViewController.swift in Sources */,
+				622344B12A13BC8F0083759C /* TabViewController.swift in Sources */,
 				62B6A7832A136C0D00915C92 /* AppDelegate.swift in Sources */,
 				62B6A7852A136C0D00915C92 /* SceneDelegate.swift in Sources */,
 				62B6A78D2A136C0D00915C92 /* NYNews.xcdatamodeld in Sources */,
