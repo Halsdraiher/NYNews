@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B033B6716BA9E0D460B25B6 /* libPods-NYNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E9991279BB6A81AE786BCB /* libPods-NYNews.a */; };
 		62B6A7832A136C0D00915C92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6A7822A136C0D00915C92 /* AppDelegate.swift */; };
 		62B6A7852A136C0D00915C92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6A7842A136C0D00915C92 /* SceneDelegate.swift */; };
 		62B6A7872A136C0D00915C92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6A7862A136C0D00915C92 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02E9991279BB6A81AE786BCB /* libPods-NYNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NYNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B6A77F2A136C0D00915C92 /* NYNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B6A7822A136C0D00915C92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62B6A7842A136C0D00915C92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		62B6A78E2A136C0E00915C92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62B6A7912A136C0E00915C92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62B6A7932A136C0E00915C92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA92BA7FD0E1583A7290CF43 /* Pods-NYNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYNews.debug.xcconfig"; path = "Target Support Files/Pods-NYNews/Pods-NYNews.debug.xcconfig"; sourceTree = "<group>"; };
+		ED09F800A7EECB739A6E2C52 /* Pods-NYNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYNews.release.xcconfig"; path = "Target Support Files/Pods-NYNews/Pods-NYNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B033B6716BA9E0D460B25B6 /* libPods-NYNews.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11CFB65F89058D604915D580 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02E9991279BB6A81AE786BCB /* libPods-NYNews.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		62B6A7762A136C0D00915C92 = {
 			isa = PBXGroup;
 			children = (
 				62B6A7812A136C0D00915C92 /* NYNews */,
 				62B6A7802A136C0D00915C92 /* Products */,
+				CEA80CFF0AB82D4046E54C3F /* Pods */,
+				11CFB65F89058D604915D580 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +85,16 @@
 			path = NYNews;
 			sourceTree = "<group>";
 		};
+		CEA80CFF0AB82D4046E54C3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA92BA7FD0E1583A7290CF43 /* Pods-NYNews.debug.xcconfig */,
+				ED09F800A7EECB739A6E2C52 /* Pods-NYNews.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +102,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 62B6A7962A136C0E00915C92 /* Build configuration list for PBXNativeTarget "NYNews" */;
 			buildPhases = (
+				077D6F22AD51867555E1ED89 /* [CP] Check Pods Manifest.lock */,
 				62B6A77B2A136C0D00915C92 /* Sources */,
 				62B6A77C2A136C0D00915C92 /* Frameworks */,
 				62B6A77D2A136C0D00915C92 /* Resources */,
@@ -135,6 +161,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		077D6F22AD51867555E1ED89 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NYNews-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		62B6A77B2A136C0D00915C92 /* Sources */ = {
@@ -286,6 +337,7 @@
 		};
 		62B6A7972A136C0E00915C92 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA92BA7FD0E1583A7290CF43 /* Pods-NYNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -299,6 +351,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,6 +367,7 @@
 		};
 		62B6A7982A136C0E00915C92 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED09F800A7EECB739A6E2C52 /* Pods-NYNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -327,6 +381,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
