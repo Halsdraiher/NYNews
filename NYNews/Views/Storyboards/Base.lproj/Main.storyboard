@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xNV-wX-NgE">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
@@ -9,28 +9,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--MostSharedView-->
         <scene sceneID="zLY-my-EPZ">
             <objects>
-                <viewController id="Vuu-oE-ewT" sceneMemberID="viewController">
+                <viewController id="Vuu-oE-ewT" userLabel="MostSharedView" customClass="MostSharedController" customModule="NYNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bLY-Dt-BGf">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="By5-Xc-XO2">
-                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Most Shared" id="gmU-LZ-gh8"/>
                                 </items>
                             </navigationBar>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Ww7-YB-VDX">
-                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="voe-Q8-mLl" id="Ydy-xs-hRB"/>
                                 </connections>
                             </searchBar>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="4vf-mj-rlz">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mostSharedCell" translatesAutoresizingMaskIntoConstraints="NO" id="4vf-mj-rlz">
                                 <rect key="frame" x="0.0" y="147" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4vf-mj-rlz" id="rWF-ff-Zc6">
@@ -56,28 +56,28 @@
             </objects>
             <point key="canvasLocation" x="969" y="438"/>
         </scene>
-        <!--Item-->
+        <!--MostViewedView-->
         <scene sceneID="DD1-hM-SDu">
             <objects>
-                <viewController id="EQ4-rn-VIz" sceneMemberID="viewController">
+                <viewController id="EQ4-rn-VIz" userLabel="MostViewedView" customClass="MostViewedController" customModule="NYNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HcS-Ys-RYh">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmB-Xn-dyg">
-                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Most Viewed" id="FRQ-0L-D5S"/>
                                 </items>
                             </navigationBar>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ZkR-m0-RU4">
-                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="voe-Q8-mLl" id="Ui5-rH-UBt"/>
                                 </connections>
                             </searchBar>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="ENS-9E-VOt">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mostVIewedCell" translatesAutoresizingMaskIntoConstraints="NO" id="ENS-9E-VOt">
                                 <rect key="frame" x="0.0" y="159" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ENS-9E-VOt" id="Y39-3F-hKa">
@@ -104,52 +104,73 @@
             </objects>
             <point key="canvasLocation" x="969" y="1168"/>
         </scene>
-        <!--Item 1-->
+        <!--MostEmailedView-->
         <scene sceneID="6Ql-2L-In6">
             <objects>
-                <viewController id="voe-Q8-mLl" sceneMemberID="viewController">
+                <viewController id="voe-Q8-mLl" userLabel="MostEmailedView" customClass="MostEmailedController" customModule="NYNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lnW-nQ-T8a">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCU-89-6QM">
-                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                                <items>
-                                    <navigationItem title="Most Emailed" id="hgk-ky-13W"/>
-                                </items>
-                            </navigationBar>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="7Du-YH-oin">
-                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="voe-Q8-mLl" id="etp-Cg-Cf0"/>
                                 </connections>
                             </searchBar>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="C92-z0-2y4">
-                                <rect key="frame" x="0.0" y="147" width="393" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mostEmailedCell" textLabel="XJd-1C-UeZ" detailTextLabel="Z1B-Qs-mJi" style="IBUITableViewCellStyleValue1" translatesAutoresizingMaskIntoConstraints="NO" id="C92-z0-2y4">
+                                <rect key="frame" x="11" y="148" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C92-z0-2y4" id="hPm-I2-7eu">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XJd-1C-UeZ">
+                                            <rect key="frame" x="20" y="15" width="25" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z1B-Qs-mJi">
+                                            <rect key="frame" x="352" y="15" width="33" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCU-89-6QM">
+                                <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Most Emailed" id="hgk-ky-13W"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gfz-cS-RD1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="sCU-89-6QM" firstAttribute="top" secondItem="gfz-cS-RD1" secondAttribute="top" id="1mh-9U-kEK"/>
-                            <constraint firstItem="7Du-YH-oin" firstAttribute="leading" secondItem="gfz-cS-RD1" secondAttribute="leading" id="CIA-u3-nx6"/>
-                            <constraint firstItem="7Du-YH-oin" firstAttribute="trailing" secondItem="gfz-cS-RD1" secondAttribute="trailing" id="FLi-Cq-Vgq"/>
-                            <constraint firstItem="7Du-YH-oin" firstAttribute="top" secondItem="sCU-89-6QM" secondAttribute="bottom" id="HsX-9a-BWe"/>
-                            <constraint firstItem="sCU-89-6QM" firstAttribute="trailing" secondItem="gfz-cS-RD1" secondAttribute="trailing" id="LKT-B3-bXv"/>
-                            <constraint firstItem="sCU-89-6QM" firstAttribute="leading" secondItem="gfz-cS-RD1" secondAttribute="leading" id="vsP-SS-KLD"/>
+                            <constraint firstItem="7Du-YH-oin" firstAttribute="trailing" secondItem="gfz-cS-RD1" secondAttribute="trailing" id="0OI-6k-SdU"/>
+                            <constraint firstItem="sCU-89-6QM" firstAttribute="leading" secondItem="gfz-cS-RD1" secondAttribute="leading" id="1tl-rj-5th"/>
+                            <constraint firstItem="7Du-YH-oin" firstAttribute="leading" secondItem="gfz-cS-RD1" secondAttribute="leading" id="IQU-jv-nMV"/>
+                            <constraint firstItem="sCU-89-6QM" firstAttribute="trailing" secondItem="gfz-cS-RD1" secondAttribute="trailing" id="MO7-0w-XvO"/>
+                            <constraint firstItem="7Du-YH-oin" firstAttribute="top" secondItem="sCU-89-6QM" secondAttribute="bottom" id="eSg-LC-pnB"/>
+                            <constraint firstItem="sCU-89-6QM" firstAttribute="top" secondItem="gfz-cS-RD1" secondAttribute="top" id="pXd-nA-0rx"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="Q4u-iD-7BU"/>
+                    <connections>
+                        <outlet property="emailedCell" destination="C92-z0-2y4" id="FnT-s9-pSH"/>
+                        <outlet property="searchBar" destination="7Du-YH-oin" id="teZ-bB-sg2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDw-VP-79j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="-290"/>
+            <point key="canvasLocation" x="968.11594202898561" y="-290.625"/>
         </scene>
         <!--Swipeable Tab Bar Controller-->
         <scene sceneID="gwM-fA-x1y">
