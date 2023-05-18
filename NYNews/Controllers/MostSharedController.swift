@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MostSharedController: UIViewController {
+class MostSharedController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

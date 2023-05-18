@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MostViewedController: UIViewController {
+class MostViewedController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
