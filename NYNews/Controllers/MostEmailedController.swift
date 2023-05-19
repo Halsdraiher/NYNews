@@ -13,7 +13,6 @@ class MostEmailedController: UITableViewController {
     let networkManager = NetworkManager()
     var results = [Results]()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,11 +26,12 @@ class MostEmailedController: UITableViewController {
             case .failure(let error):
                 print(error)
             }
+            self.tableView.reloadData()
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        tabBarController?.navigationItem.title = "Most Emailed"
+        tabBarController?.navigationItem.title = "MOST EMAILED"
         self.tableView.reloadData()
     }
         
@@ -41,6 +41,7 @@ class MostEmailedController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.emailedCellIdentifer)
+        
         cell?.textLabel?.font = UIFont(name: K.Fonts.cellFont, size:13)
         cell?.textLabel?.text = results[indexPath.row].title
         

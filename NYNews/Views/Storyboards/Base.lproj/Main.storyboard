@@ -33,16 +33,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="BackColor"/>
+                        <tabBarAppearance key="standardAppearance"/>
                     </tabBar>
                     <connections>
                         <segue destination="tA4-rD-0Dm" kind="relationship" relationship="viewControllers" id="NLZ-1m-yFs"/>
                         <segue destination="W9A-qO-cij" kind="relationship" relationship="viewControllers" id="0WC-Sf-Z5c"/>
                         <segue destination="Awr-v7-Fgx" kind="relationship" relationship="viewControllers" id="fPn-2Q-18y"/>
+                        <segue destination="Gl7-wd-Aq4" kind="relationship" relationship="viewControllers" id="pmo-HO-dMh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wdn-41-H9u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="128" y="437"/>
+        </scene>
+        <!--Favorite-->
+        <scene sceneID="r59-18-hk9">
+            <objects>
+                <tableViewController id="Gl7-wd-Aq4" customClass="FavoriteNewsController" customModule="NYNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="jgU-Oc-Nyf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="BackColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="fAT-ON-Wex">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="barTintColor" name="BackColor"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="Gl7-wd-Aq4" id="Jc1-RE-iHK"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoriteCell" textLabel="A77-1s-Xbv" style="IBUITableViewCellStyleDefault" id="2nn-AM-RI8">
+                                <rect key="frame" x="0.0" y="94" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2nn-AM-RI8" id="2er-eP-BJc">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A77-1s-Xbv">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" name="BackColor"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Gl7-wd-Aq4" id="Ob4-bH-KCq"/>
+                            <outlet property="delegate" destination="Gl7-wd-Aq4" id="WNX-CZ-HoO"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="star.fill" catalog="system" id="e4M-T8-eRm"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WP8-VX-E4m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128" y="1163"/>
         </scene>
         <!--Most Viewed-->
         <scene sceneID="5xo-2O-Qeh">
@@ -135,7 +185,7 @@
                             <outlet property="delegate" destination="W9A-qO-cij" id="967-hD-AL3"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Most Shared" image="square.and.arrow.up" catalog="system" id="f8O-jY-Dym"/>
+                    <tabBarItem key="tabBarItem" title="Most Shared" image="square.and.arrow.up.fill" catalog="system" id="f8O-jY-Dym"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nG9-Qt-SEP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -160,15 +210,15 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="emailedCell" textLabel="pZM-YM-n0W" style="IBUITableViewCellStyleDefault" id="JK3-cz-CFY">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="emailedCell" textLabel="Bxk-zS-HZH" style="IBUITableViewCellStyleDefault" id="JK3-cz-CFY">
                                 <rect key="frame" x="0.0" y="94" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JK3-cz-CFY" id="igO-uT-Pty">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383.5" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pZM-YM-n0W">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bxk-zS-HZH">
+                                            <rect key="frame" x="20" y="0.0" width="355.5" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
@@ -184,7 +234,7 @@
                             <outlet property="delegate" destination="tA4-rD-0Dm" id="rbQ-3P-8kT"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Most Emailed" image="mail" catalog="system" id="3dh-l2-tVj"/>
+                    <tabBarItem key="tabBarItem" title="Most Emailed" image="paperplane.fill" catalog="system" id="3dh-l2-tVj"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FHq-GF-sMl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -195,8 +245,9 @@
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
         <image name="eyeglasses" catalog="system" width="128" height="55"/>
-        <image name="mail" catalog="system" width="128" height="93"/>
-        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="paperplane.fill" catalog="system" width="128" height="119"/>
+        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="BackColor">
             <color red="0.82400000095367432" green="0.91399997472763062" blue="0.91399997472763062" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
