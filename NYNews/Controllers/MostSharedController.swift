@@ -15,7 +15,7 @@ class MostSharedController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        tabBarController?.navigationItem.title = "Most Shared"
+        tabBarController?.navigationItem.title = "MOST SHARED"
     }
     
 
