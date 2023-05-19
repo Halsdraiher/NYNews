@@ -7,11 +7,15 @@
 
 import UIKit
 
-class MostViewedController: UIViewController {
+class MostViewedController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tabBarController?.navigationItem.title = "Most Viewed"
     }
 
 

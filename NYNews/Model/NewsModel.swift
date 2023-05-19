@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct News {
-    let title: String?
-    let elect: Bool?
+struct NewsModel {
+    var testTitle: String?
 }
+
 
