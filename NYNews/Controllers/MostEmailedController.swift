@@ -11,9 +11,7 @@ import Alamofire
 class MostEmailedController: UITableViewController {
 
     let networkManager = NetworkManager()
-    var titleName = [Results]()
-    var titleNumberCount = 0
-    var newsModel = NewsModel()
+    var results = [Results]()
     
     
     override func viewDidLoad() {
@@ -22,36 +20,33 @@ class MostEmailedController: UITableViewController {
         networkManager.fetchData { result in
             switch result {
             case .success(let userResult):
-                
-                let titlesNumber = userResult.results.count
-                self.titleNumberCount = titlesNumber
-                
-                let title = userResult.results
-                self.titleName = title
+    
+                let result = userResult.results
+                self.results = result
                 
             case .failure(let error):
                 print(error)
             }
-            
-            self.tableView.reloadData()
         }
-        
-        }
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         tabBarController?.navigationItem.title = "Most Emailed"
+        self.tableView.reloadData()
     }
         
-        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            titleNumberCount
-        }
-        
-        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: K.emailedCellIdentifer)
-            cell?.textLabel?.text = titleName[indexPath.row].title
-            return cell!
-        }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        results.count
+    }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.emailedCellIdentifer)
+        cell?.textLabel?.font = UIFont(name: K.Fonts.cellFont, size:13)
+        cell?.textLabel?.text = results[indexPath.row].title
+        
+        return cell!
+    }
+
     
         
     

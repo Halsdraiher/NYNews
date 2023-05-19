@@ -13,4 +13,11 @@ struct K {
     static let sharedCellIdentifer = "sharedCell"
     static let viewedCellIdentifer = "viewedCell"
     
+    struct Colors {
+        static let backColor = "BackColor"
+    }
+    
+    struct Fonts {
+        static let cellFont = "Roboto Condensed"
+    }
 }
