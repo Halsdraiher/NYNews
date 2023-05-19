@@ -13,6 +13,7 @@ class MostEmailedController: UITableViewController {
     let networkManager = NetworkManager()
     var titleName = [Results]()
     var titleNumberCount = 0
+    var newsModel = NewsModel()
     
     
     override func viewDidLoad() {
@@ -34,9 +35,12 @@ class MostEmailedController: UITableViewController {
             
             self.tableView.reloadData()
         }
-       
         
         }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tabBarController?.navigationItem.title = "Most Emailed"
+    }
         
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             titleNumberCount

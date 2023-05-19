@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xNV-wX-NgE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BSK-6J-3BC">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,10 +8,27 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Swipeable Tab Bar Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="swI-KO-f7j">
+            <objects>
+                <navigationController id="BSK-6J-3BC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Rno-eH-S6x">
+                        <rect key="frame" x="0.0" y="48" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xNV-wX-NgE" kind="relationship" relationship="rootViewController" id="Psp-SB-m4t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZEX-11-VXG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-703" y="437"/>
+        </scene>
+        <!--Most-->
         <scene sceneID="gwM-fA-x1y">
             <objects>
                 <tabBarController id="xNV-wX-NgE" customClass="SwipeableTabBarController" customModule="SwipeableTabBarController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Most" id="AMd-nR-2FQ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dc5-6i-AlS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -25,7 +42,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wdn-41-H9u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="187" y="437"/>
+            <point key="canvasLocation" x="128" y="437"/>
         </scene>
         <!--Item-->
         <scene sceneID="5xo-2O-Qeh">
@@ -35,13 +52,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="Hog-gz-LW7">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="xsR-bk-T2F">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Most Viewed" id="MYV-8b-9bB"/>
-                            </items>
-                        </navigationBar>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="Awr-v7-Fgx" id="h3P-w0-7z4"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="viewedCell" id="gjg-TG-U2u">
                                 <rect key="frame" x="0.0" y="94" width="414" height="43.5"/>
@@ -62,7 +80,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G6a-VA-pol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1023" y="1081"/>
+            <point key="canvasLocation" x="1022" y="1163"/>
         </scene>
         <!--Item-->
         <scene sceneID="eCj-Xn-dxR">
@@ -72,13 +90,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="Vj8-P7-r0b">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="hMp-fn-s2Y">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Most Shared" id="rxA-Bk-wwl"/>
-                            </items>
-                        </navigationBar>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="W9A-qO-cij" id="Y4f-hz-1K3"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sharedCell" id="u8Z-cc-le1">
                                 <rect key="frame" x="0.0" y="94" width="414" height="43.5"/>
@@ -101,7 +120,7 @@
             </objects>
             <point key="canvasLocation" x="1022" y="437"/>
         </scene>
-        <!--Item-->
+        <!--Most Emailed-->
         <scene sceneID="Yhx-sp-ezp">
             <objects>
                 <tableViewController id="tA4-rD-0Dm" customClass="MostEmailedController" customModule="NYNews" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,13 +128,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="HKR-d9-obn">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="dJa-RH-B9V">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Most Emailed" id="Ix3-Dn-hIP"/>
-                            </items>
-                        </navigationBar>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="tA4-rD-0Dm" id="UlQ-Tn-3yU"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="emailedCell" textLabel="9Ia-aT-0Qp" detailTextLabel="br1-NQ-8Uy" style="IBUITableViewCellStyleValue1" id="JK3-cz-CFY">
                                 <rect key="frame" x="0.0" y="94" width="414" height="43.5"/>
@@ -149,11 +169,12 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="3dh-l2-tVj"/>
+                    <navigationItem key="navigationItem" title="Most Emailed" id="xty-8Y-c0f"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FHq-GF-sMl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1021.7391304347827" y="-204.24107142857142"/>
+            <point key="canvasLocation" x="1022" y="-238"/>
         </scene>
     </scenes>
     <resources>

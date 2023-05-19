@@ -13,6 +13,10 @@ class MostViewedController: UITableViewController {
         super.viewDidLoad()
 
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tabBarController?.navigationItem.title = "Most Viewed"
+    }
 
 
 }
