@@ -10,11 +10,28 @@ import Alamofire
 
 class NetworkManager {
     
-    let apiUrl = "https://api.nytimes.com/svc/mostpopular/v2/emailed/30.json?api-key=Nt1gabBpwkGIHhp2g50OCAP5JzRd62Ap"
-    var title = NewsModel().testTitle
+    var results = [Results]()
     
-    func fetchData(completion: @escaping (Result<NewsApiData, Error>)-> ()) {
-        AF.request(apiUrl)
+    
+    func getURL(category: String, reloadView: UITableView) {
+        let apiUrl = "https://api.nytimes.com/svc/mostpopular/v2/\(category)/30.json?api-key=Nt1gabBpwkGIHhp2g50OCAP5JzRd62Ap"
+        
+        fetchData(url: apiUrl) { result in
+            switch result {
+            case .success(let userResult):
+    
+                let result = userResult.results
+                self.results = result
+                
+            case .failure(let error):
+                print(error)
+            }
+            reloadView.reloadData()
+        }
+    }
+    
+    func fetchData(url: String, completion: @escaping (Result<NewsApiData, Error>)-> ()) {
+        AF.request(url)
             .validate()
             .response { response in
             guard let data = response.data else {
@@ -31,8 +48,7 @@ class NetworkManager {
                     return
                 }
                 completion(.success(userResults))
-                self.title = userResults.results[0].title ?? "No title"
-                
+            
         }
     }
     
