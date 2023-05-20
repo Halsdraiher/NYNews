@@ -13,6 +13,7 @@ class MostSharedController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         networkManager.getURL(category: K.Categories.mostShared, reloadView: tableView)
         
     }
@@ -35,7 +36,4 @@ class MostSharedController: UITableViewController {
         return cell!
     }
     
-
-    
-
 }

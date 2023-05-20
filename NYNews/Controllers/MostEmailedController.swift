@@ -6,14 +6,14 @@
 //
 
 import UIKit
-import Alamofire
 
 class MostEmailedController: UITableViewController {
 
-    let networkManager = NetworkManager()
-    
+    var networkManager = NetworkManager()
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         networkManager.getURL(category: K.Categories.mostEmailed, reloadView: tableView)
         
     }
@@ -37,9 +37,6 @@ class MostEmailedController: UITableViewController {
         return cell!
     }
     
-    
-    
 }
-
 
 
