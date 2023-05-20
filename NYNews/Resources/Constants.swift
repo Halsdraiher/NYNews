@@ -20,4 +20,10 @@ struct K {
     struct Fonts {
         static let cellFont = "Roboto Condensed"
     }
+    
+    struct Categories {
+        static let mostEmailed = "emailed"
+        static let mostShared = "shared"
+        static let mostViewed = "viewed"
+    }
 }
