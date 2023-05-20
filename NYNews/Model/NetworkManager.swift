@@ -12,7 +12,6 @@ class NetworkManager {
     
     var results = [Results]()
     
-    
     func getURL(category: String, reloadView: UITableView) {
         let apiUrl = "https://api.nytimes.com/svc/mostpopular/v2/\(category)/30.json?api-key=Nt1gabBpwkGIHhp2g50OCAP5JzRd62Ap"
         

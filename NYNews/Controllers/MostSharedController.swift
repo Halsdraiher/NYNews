@@ -36,4 +36,18 @@ class MostSharedController: UITableViewController {
         return cell!
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Отримуємо вибраний об'єкт з вашого масиву даних
+        let selectedResult = networkManager.results[indexPath.row]
+        
+        // Перевіряємо, чи маємо непустий URL
+        let urlString = selectedResult.url, url = URL(string: urlString)
+        // Створюємо екземпляр WebViewController та передаємо URL
+        let webViewController = WebViewController()
+        webViewController.url = url
+        
+        // Відкриваємо новий екран WebView
+        navigationController?.pushViewController(webViewController, animated: true)
+    }
+    
 }

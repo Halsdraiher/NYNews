@@ -14,4 +14,5 @@ struct NewsApiData: Codable {
 
 struct Results: Codable {
     let title: String
+    let url: String
 }
