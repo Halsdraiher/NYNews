@@ -27,7 +27,7 @@
         <!--Title-->
         <scene sceneID="gwM-fA-x1y">
             <objects>
-                <tabBarController id="xNV-wX-NgE" customClass="SwipeableTabBarController" customModule="SwipeableTabBarController" sceneMemberID="viewController">
+                <tabBarController id="xNV-wX-NgE" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Title" id="AMd-nR-2FQ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dc5-6i-AlS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>

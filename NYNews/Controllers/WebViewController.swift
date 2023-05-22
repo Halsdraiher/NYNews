@@ -24,10 +24,3 @@ class WebViewController: UIViewController, WKNavigationDelegate {
         webView.load(request)
     }
 }
-
-//// Розширення для делегата навігації WKWebView
-//extension WebViewController: WKNavigationDelegate {
-//    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-//        // Сторінка завантажена
-//    }
-//}
