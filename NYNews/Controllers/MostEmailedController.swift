@@ -7,13 +7,10 @@
 
 import UIKit
 
-class MostEmailedController: UITableViewController {
-    
-    var networkManager = NetworkManager()
+class MostEmailedController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         networkManager.getURL(category: K.Categories.mostEmailed, reloadView: tableView)
         
     }
@@ -21,10 +18,6 @@ class MostEmailedController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         tabBarController?.navigationItem.title = "MOST EMAILED"
         tableView.reloadData()
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        networkManager.results.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,19 +30,7 @@ class MostEmailedController: UITableViewController {
         return cell!
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Отримуємо вибраний об'єкт з вашого масиву даних
-        let selectedResult = networkManager.results[indexPath.row]
-        
-        // Перевіряємо, чи маємо непустий URL
-        let urlString = selectedResult.url, url = URL(string: urlString)
-        // Створюємо екземпляр WebViewController та передаємо URL
-        let webViewController = WebViewController()
-        webViewController.url = url
-        
-        // Відкриваємо новий екран WebView
-        navigationController?.pushViewController(webViewController, animated: true)
-    }
+
 }
 
 
