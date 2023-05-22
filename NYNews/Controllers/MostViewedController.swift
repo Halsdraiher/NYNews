@@ -7,23 +7,16 @@
 
 import UIKit
 
-class MostViewedController: UITableViewController {
+class MostViewedController: BaseController {
     
-    let networkManager = NetworkManager()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         networkManager.getURL(category: K.Categories.mostViewed, reloadView: tableView)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         tabBarController?.navigationItem.title = "MOST VIEWED"
         tableView.reloadData()
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        networkManager.results.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -34,21 +27,5 @@ class MostViewedController: UITableViewController {
         
         return cell!
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Отримуємо вибраний об'єкт з вашого масиву даних
-        let selectedResult = networkManager.results[indexPath.row]
-        
-        // Перевіряємо, чи маємо непустий URL
-        let urlString = selectedResult.url, url = URL(string: urlString)
-        // Створюємо екземпляр WebViewController та передаємо URL
-        let webViewController = WebViewController()
-        webViewController.url = url
-        
-        // Відкриваємо новий екран WebView
-        navigationController?.pushViewController(webViewController, animated: true)
-    }
-    
-
 
 }
