@@ -29,7 +29,6 @@ struct K {
     }
     
     struct Symbols {
-        static let star = "star"
-        static let starFill = "star.fill"
+        static let star = "Star"
     }
 }
