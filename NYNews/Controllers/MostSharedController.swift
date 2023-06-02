@@ -32,6 +32,10 @@ class MostSharedController: BaseController {
         cell.textLabel?.font = UIFont(name: K.Fonts.cellFont, size: 13)
         cell.textLabel?.text = networkManager.results[indexPath.row].title
         
+        DispatchQueue.main.async {
+            self.updateCellBorder(indexPath: indexPath)
+        }
+        
         return cell
     }
     

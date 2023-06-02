@@ -65,6 +65,7 @@ class FavoriteNewsController: UITableViewController, SwipeTableViewCellDelegate 
         webViewController.url = url
         
         navigationController?.pushViewController(webViewController, animated: true)
+        
     }
     
     func loadNotes(with request: NSFetchRequest<FavoriteNews> = FavoriteNews.fetchRequest(), predicate: NSPredicate? = nil) {
