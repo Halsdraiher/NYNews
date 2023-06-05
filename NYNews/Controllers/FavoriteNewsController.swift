@@ -17,7 +17,7 @@ class FavoriteNewsController: UITableViewController, SwipeTableViewCellDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 80.0
+        tableView.rowHeight = 60.0
         loadFavorites()
     }
     
@@ -27,18 +27,6 @@ class FavoriteNewsController: UITableViewController, SwipeTableViewCellDelegate 
     }
 
     // MARK: - Table view data source
-    
-    func loadFavorites(with request: NSFetchRequest<FavoriteNews> = FavoriteNews.fetchRequest(), predicate: NSPredicate? = nil) {
-        
-        do {
-            favoriteNews = try context.fetch(request)
-        } catch {
-            print("Error fetching data from context \(error)")
-        }
-        
-        tableView.reloadData()
-        
-    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         favoriteNews.count
@@ -68,7 +56,11 @@ class FavoriteNewsController: UITableViewController, SwipeTableViewCellDelegate 
         
     }
     
-    func loadNotes(with request: NSFetchRequest<FavoriteNews> = FavoriteNews.fetchRequest(), predicate: NSPredicate? = nil) {
+    func loadFavorites(with request: NSFetchRequest<FavoriteNews> = FavoriteNews.fetchRequest(), predicate: NSPredicate? = nil) {
+        
+        if let additionalPredicate = predicate {
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [additionalPredicate])
+        }
         
         do {
             favoriteNews = try context.fetch(request)
@@ -89,7 +81,7 @@ class FavoriteNewsController: UITableViewController, SwipeTableViewCellDelegate 
                 let cellToDelete = favoriteNews[indexPath.row]
                 context.delete(cellToDelete!)
                 try context.save()
-                loadNotes()
+                loadFavorites()
                 print("Title and url deleted")
             } catch {
                 print("Error deleting title and url: \(error)")
@@ -97,5 +89,32 @@ class FavoriteNewsController: UITableViewController, SwipeTableViewCellDelegate 
         }
         return [deleteFromFavorite]
     }
+    
+}
+
+extension FavoriteNewsController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        let request: NSFetchRequest<FavoriteNews> = FavoriteNews.fetchRequest()
+        
+        let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        
+        
+        loadFavorites(with: request, predicate: predicate)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadFavorites()
+            
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+        }
+    }
+    
     
 }
