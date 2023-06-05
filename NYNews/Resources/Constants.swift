@@ -9,9 +9,10 @@ import Foundation
 
 struct K {
     
-    static let emailedCellIdentifer = "emailedCell"
-    static let sharedCellIdentifer = "sharedCell"
-    static let viewedCellIdentifer = "viewedCell"
+    static let emailedCellIdentifier = "emailedCell"
+    static let sharedCellIdentifier = "sharedCell"
+    static let viewedCellIdentifier = "viewedCell"
+    static let favoriteCellIdentifier = "favoriteCell"
     
     struct Colors {
         static let backColor = "BackColor"
@@ -25,5 +26,9 @@ struct K {
         static let mostEmailed = "emailed"
         static let mostShared = "shared"
         static let mostViewed = "viewed"
+    }
+    
+    struct Symbols {
+        static let star = "Star"
     }
 }

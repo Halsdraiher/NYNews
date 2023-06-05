@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwipeCellKit
 
 class MostViewedController: BaseController {
     
@@ -20,12 +21,18 @@ class MostViewedController: BaseController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.viewedCellIdentifer)
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.viewedCellIdentifier) as! SwipeTableViewCell
         
-        cell?.textLabel?.font = UIFont(name: K.Fonts.cellFont, size: 13)
-        cell?.textLabel?.text = networkManager.results[indexPath.row].title
+        cell.delegate = self
         
-        return cell!
+        cell.textLabel?.font = UIFont(name: K.Fonts.cellFont, size: 13)
+        cell.textLabel?.text = networkManager.results[indexPath.row].title
+        
+        DispatchQueue.main.async {
+            self.updateCellBorder(indexPath: indexPath)
+        }
+        
+        return cell
     }
 
 }
