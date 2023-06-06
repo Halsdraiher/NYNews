@@ -76,7 +76,7 @@ class FavoriteNewsController: UITableViewController, SwipeTableViewCellDelegate 
         
         guard orientation == .right else { return nil }
         
-        let deleteFromFavorite = SwipeAction(style: .default, title: "Delete") { [self] action, indexPath in
+        let deleteFromFavorite = SwipeAction(style: .destructive, title: "Delete") { [self] action, indexPath in
             do {
                 let cellToDelete = favoriteNews[indexPath.row]
                 context.delete(cellToDelete!)

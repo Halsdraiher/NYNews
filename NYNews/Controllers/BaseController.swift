@@ -27,7 +27,6 @@ class BaseController: UITableViewController, SwipeTableViewCellDelegate {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         networkManager.results.count
         
-        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

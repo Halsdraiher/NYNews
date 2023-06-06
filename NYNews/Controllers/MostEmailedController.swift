@@ -14,6 +14,8 @@ class MostEmailedController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         networkManager.getURL(category: K.Categories.mostEmailed, reloadView: tableView)
+        
+        tableView.register(UINib(nibName: K.nibName, bundle: nil), forCellReuseIdentifier: K.reusableCell)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -25,12 +27,12 @@ class MostEmailedController: BaseController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.emailedCellIdentifier) as! SwipeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCell, for: indexPath) as! NewsCell
         
-        cell.delegate = self
+//        cell.delegate = self
         
-        cell.textLabel?.font = UIFont(name: K.Fonts.cellFont, size: 13)
-        cell.textLabel?.text = networkManager.results[indexPath.row].title
+        cell.textCell?.font = UIFont(name: K.Fonts.cellFont, size: 13)
+        cell.textCell?.text = networkManager.results[indexPath.row].title
         
         DispatchQueue.main.async {
             self.updateCellBorder(indexPath: indexPath)

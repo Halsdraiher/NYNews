@@ -13,6 +13,9 @@ struct K {
     static let sharedCellIdentifier = "sharedCell"
     static let viewedCellIdentifier = "viewedCell"
     static let favoriteCellIdentifier = "favoriteCell"
+    static let reusableCell = "reusableCell"
+    static let nibName = "NewsCell"
+    
     
     struct Colors {
         static let backColor = "BackColor"
