@@ -12,9 +12,10 @@ import SwipeCellKit
 class BaseController: UITableViewController, SwipeTableViewCellDelegate {
     
     var fetchedResultsController: NSFetchedResultsController<NSManagedObject>?
-    
+   
     var networkManager = NetworkManager()
     var favoriteNewsArray = [FavoriteNews?]()
+    let newsCell = NewsCell()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,14 +120,12 @@ class BaseController: UITableViewController, SwipeTableViewCellDelegate {
     
     func updateCellBorder(indexPath: IndexPath) {
         let title = self.networkManager.results[indexPath.row].title
-        let updatedCell = self.tableView.cellForRow(at: indexPath)
+        let updatedCell = self.tableView.cellForRow(at: indexPath) as! NewsCell
         
         if self.checkExistingTitle(title) {
-            updatedCell?.layer.borderWidth = 1.0
-            updatedCell?.layer.borderColor = UIColor.yellow.cgColor
+            updatedCell.favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
         } else {
-            updatedCell?.layer.borderWidth = 0.0
-            updatedCell?.layer.borderColor = nil
+            updatedCell.favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
         }
     }
 }
